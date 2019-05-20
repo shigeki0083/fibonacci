@@ -25,3 +25,28 @@ for (let i = 0 ; i <= length ; ++i)
 {
     console.log(fib(i));
 }
+
+console.log();
+
+// トリボナッチ数列。
+const memo_t = new Map();
+memo_t.set(0, 0);
+memo_t.set(1, 0);
+memo_t.set(2, 1);
+
+function trib(n)
+{
+    if(memo_t.has(n))
+    {
+        return memo_t.get(n);
+    }
+
+    const value = trib(n-1) + trib(n-2) + trib(n-3);
+    memo_t.set(n, value);
+    return value;
+}
+
+for (let i = 0 ; i <= length ; ++i)
+{
+    console.log(trib(i));
+}
