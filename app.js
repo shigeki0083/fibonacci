@@ -1,1 +1,23 @@
+// Chapter4 Section3 アルゴリズムの改善
+// フィボナッチ数列を４０番目まで出力する。
+
 'use strict';
+
+function fibonacci(n)
+{
+    if(n === 0)
+    {
+        return 0;
+    }
+    else if(n === 1)
+    {
+        return 1;
+    }
+    return fibonacci(n-1) + fibonacci(n-2);
+}
+
+const length = 40;
+for (let i = 0 ; i <= length ; ++i)
+{
+    console.log(fibonacci(i));
+}
